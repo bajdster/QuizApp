@@ -1,0 +1,40 @@
+[
+        {
+            "number": 1,
+            "content": "Co to jest testowanie czarnoskrzynkowe?",
+            "A": "Testowanie bez znajomości struktury kodu",
+            "B": "Testowanie ze znajomościa struktury kodu",
+            "C": "Testowanie eksploracyjne",
+            "D": "Testowanie regresyjne",
+            "correct": "A"
+
+        },
+        {
+            "number": 2,
+            "content": "Popularne narzędzie do automatyzacji testów to?",
+            "A": "Jira",
+            "B": "VS Code",
+            "C": "TestLink",
+            "D": "Selenium",
+            "correct": "D"
+        },
+        {
+            "number": 3,
+            "content": "Czy możliwe jest zapewnienie że aplikacja nie posiada błędów?",
+            "A": "Tak",
+            "B": "Tak ale tylko funkcjonalnych",
+            "C": "Nie",
+            "D": "Tylko w stosunku do aplikacji mobilnych",
+            "correct": "C"
+        },
+        {
+            "number": 4,
+            "content": "Ile jest zasad testowania wg ISTQB?",
+            "A": "3",
+            "B": "7",
+            "C": "12",
+            "D": "5",
+            "correct": "B"
+        }
+
+    ]

@@ -1,0 +1,169 @@
+html
+{
+  height: 100vh;
+  
+}
+*
+{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+body
+{
+  background-image: url("qm.jpg");
+  background-size: cover;
+  height: 100%;
+}
+container
+{
+  width:100%;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.gameWindow
+{
+  width: 50%;
+  height: 500px;
+  background-color: rgba(253, 253, 253,0.7);
+  border-radius: 10%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+h1
+{
+  font-size: 100px;
+  text-align: center;
+  background-image: url("space.jpg");
+  color: rgba(255,255,255, 0.01);
+  -webkit-background-clip: text;
+  animation: move 30s ease-in-out infinite;
+}
+.answers
+{
+  width:80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.answer
+{
+  background-color: #FCF7F4;
+  border-radius: 20px;
+  margin-top:3px;
+  width:80%;
+  height: 20%;
+  box-shadow: inset 0px 0px 2px black;
+  display: flex;
+  align-items: center;
+}
+.answer:hover
+{
+  background-color: lightblue;
+  color: white;
+  cursor: pointer;
+}
+.ans
+{
+  background-color: #87ABE3;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 0 0 20px;
+  margin-right: 4px;
+  padding: 4px;
+
+}
+.questionContent
+{
+  background-color:#87ABE3;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 10px;
+  color: aliceblue;
+}
+.buttons
+{
+  width:100%;
+  height: 10%;
+  text-align: center;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+.buttons button
+{
+  width:10%;
+  height: 80%;
+  border: none;
+  background: none;
+}
+.buttons button:hover
+{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+img
+{
+  width:100%;
+  height: 100%;
+}
+
+.correctAnswer
+{
+  background-color: greenyellow;
+}
+.correctAnswer:hover
+{
+  background-color: greenyellow;
+}
+.wrongAnswer
+{
+  background-color: rgb(147, 48, 48);
+}
+.wrongAnswer:hover
+{
+  background-color: rgb(147, 48, 48);
+}
+
+.results
+{
+  background-color: #87ABE3;
+  width:80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+}
+
+
+@keyframes move 
+{
+  0%,
+  100%
+  {
+    background-position: left top;
+  }  
+  25%
+  {
+    background-position: right bottom;
+  }
+  50%
+  {
+    background-position: left bottom;
+  }
+  75%
+  {
+    background-position: right top;
+  }
+}
