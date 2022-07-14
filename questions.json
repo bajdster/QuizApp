@@ -35,6 +35,15 @@
             "C": "12",
             "D": "5",
             "correct": "B"
+        },
+        {
+            "number": 5,
+            "content": "Co powinno zawierać zgłoszenie błedu?",
+            "A": "Tytuł, Środowisko, Kroku do reprodukcji, Oczekiwany rezultat, Rzeczywisty rezultat, Załączniki(zrzut ekranu, film)",
+            "B": "Tytuł, Środowisko, Kroku do reprodukcji, Oczekiwany rezultat, Nazwisko programisty",
+            "C": "Tytuł, Środowisko, Oczekiwany rezultat, Propozycje rozwiązania problemu",
+            "D": "Tytuł, Środowisko, Kroku do reprodukcji, Rzeczywisty rezultat",
+            "correct": "A"
         }
 
     ]

@@ -17,6 +17,7 @@ function showQuestions()
         gameWindow.innerHTML = `<h2 class ="questionContent">Pytanie ${questions[round].number}
         <p>${questions[round].content}</p>
         </h2>
+        <p class = "roundCounter">${round+1}/${questions.length}</p>
 
         
         <div class = "answers">
@@ -36,8 +37,13 @@ function showQuestions()
     }
     else
     {
-        gameWindow.innerHTML = `<div class = "results"><h2>Congratulations</h2>
-        <div>You achieved ${points} points</div>
+        gameWindow.innerHTML = `
+        <div class = "results">
+            <div class = "resultsCongrats"><h2>Congratulations</h2>
+            </div>
+                <span class = "correct">Correct points: ${points}</span>
+                <span class = "incorrect">Incorrect points: ${round - points}</span>
+                <span></span>
         </div>
         `
     }
@@ -46,7 +52,11 @@ function showQuestions()
     function prevQuestion()
     {
         isPrev = true;
-        round--;
+        if(round>0)
+        {
+            round--;
+        }
+        
         showQuestions();
     }
 
