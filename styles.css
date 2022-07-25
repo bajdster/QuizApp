@@ -11,7 +11,8 @@ html
 }
 body
 {
-  background-image: url("cyber1.jpg");
+  /* background-image: url("black.jpg"); */
+  background-color: #330033;
   background-size: cover;
   height: 100%;
 }
@@ -20,20 +21,78 @@ container
   width:100%;
   height: 100%;
   display:flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
 }
+nav
+{
+  width:20%;
+  height: 100%;
+  background-color: rgba(24, 23, 23, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu
+{
+  
+  list-style-type: none;
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu li
+{
+  background-color: aliceblue;
+  padding:10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px dotted black;
+  transition: 0.3s;
+  margin-top:30px;
+  width:90%;
+}
+
+.menu li:first-child
+{
+  background-color: #87ABE3;
+  border-radius: 5px;
+  width:90%;
+  align-self: center;
+}
+.menu li span
+{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-right:10px;
+}
+
+.menu a
+{
+  text-decoration:none;
+  color:black;
+}
+.menu li:hover
+{
+  cursor: pointer;
+  background-color:grey;
+}
 .gameWindow
 {
-  width: 60%;
-  height: 600px;
-  background-color: rgba(253, 253, 253,0.7);
+  width: 70%;
+  height: 90%;
+  background-color: rgb(255, 255, 255);
   border-radius: 10%;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
+  margin-right: 30px;
 }
 h1
 {
@@ -43,6 +102,7 @@ h1
   color: rgba(255,255,255, 0.01);
   -webkit-background-clip: text;
   animation: move 30s ease-in-out infinite;
+  letter-spacing: 15px;
 }
 .description
 {
@@ -61,6 +121,60 @@ h1
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+.aboutDesc
+{
+  position:absolute;
+  top:10%;
+  left:25%;
+  background: url("space1.jpg");
+  height: 80%;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px grey;
+  display: none;
+}
+.aboutDesc img
+{
+  width:50%;
+  height: 50%;
+  margin-top: 50px;
+}
+.aboutDesc p
+{
+  width:30%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color:white;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aboutDesc .exit
+{
+  position:absolute;
+  top:10px;
+  right: 10px;
+  width:30px;
+  height: 30px;
+}
+.aboutDesc .exit ion-icon
+{
+  height: 90%;
+  width: 90%;
+  background-color: white;
+  border-radius: 50%;
+}
+.aboutDesc .exit ion-icon:hover
+{
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
 .answers
 {
   width:80%;
@@ -73,13 +187,15 @@ h1
 .answer
 {
   background-color: #FCF7F4;
-  border-radius: 20px;
+  border-radius: 50px 0px 83px 20px;
   margin-top:3px;
   width:80%;
   min-height: 20%;
   box-shadow: inset 0px 0px 2px black;
   display: flex;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
+  transition: 0.2s
 }
 .answer:hover
 {
@@ -95,9 +211,10 @@ h1
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px 0 0 20px;
+  /* border-radius: 20px 0 0 20px; */
   margin-right: 4px;
   padding: 4px;
+  border-radius: 83px 0px 83px 20px;
 }
 p.roundCounter
 {
@@ -112,6 +229,8 @@ p.roundCounter
   margin-bottom: 10px;
   color: aliceblue;
   padding: 5px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 148px 150px 0px 150px;
 }
 .buttons
 {
@@ -128,6 +247,8 @@ p.roundCounter
   height: 80%;
   border: none;
   background: none;
+  position:relative;
+  transition: 0.3s;
 }
 .buttons button:hover
 {
@@ -138,6 +259,23 @@ img
 {
   width:100%;
   height: 100%;
+}
+
+.tooltip
+{
+  position:absolute;
+  left:110%;
+  top:10%;
+  background-color: aliceblue;
+  padding: 4px;
+  border-radius: 4px;
+  opacity: 0.8;
+  display:none;
+  
+}
+.buttons button:hover .tooltip
+{
+  display: block;
 }
 
 .correctAnswer
@@ -181,7 +319,7 @@ img
 .resultsCongrats h2
 {
   font-size: 48px;
-  color: aliceblue;
+  color: rgb(188, 201, 213);
 }
 .results span
 {
@@ -195,6 +333,28 @@ span.correct
 span.incorrect
 {
   color: rgb(147, 48, 48);
+}
+.againButton
+{
+  width:30%;
+  height: 20%;
+  margin-top:20px;
+  background-color: aliceblue;
+  border:none;
+  border-radius: 2px;
+  font-size: 18px;
+  color:grey;
+  transition: 0.3s
+}
+
+.againButton:hover
+{
+  transform:scale(1.1);
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: 2px 2px 20px grey;
+  color:black;
+  transform:  skew(-16deg, 0deg);
 }
 
 @keyframes move 
@@ -221,7 +381,8 @@ span.incorrect
 {
   .gameWindow
   {
-    width:80%;
+    width:70%;
+
   }
   .description
   {
@@ -241,13 +402,130 @@ span.incorrect
   {
     font-size: 50px;
   }
-  
+  .tooltip
+  {
+    padding: 3px;
+    font-size: 10px;
+  }
+  .answer
+  {
+    width: 100%;
+    font-size:13px;
+    height: 25%;
+    word-wrap:break-word;
+    padding-right: 10px;
+  }
+  .questionContent
+  {
+    font-size: 18px; 
+  }
+  p.roundCounter
+  {
+    font-size: 16px;
+  }
+
+  container
+  {
+    flex-direction: column;
+  }
+
+      nav
+    {
+      width:100%;
+      height: 10%;
+      background-color: rgba(24, 23, 23, 0.7);
+      /* position:fixed; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .menu
+    {
+      width:100%;
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    .menu li
+    {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+      margin-top:2px;
+      width:20%;
+      border-radius: 50%;
+      justify-content: center;
+    }
+    .menu li:first-child
+    {
+      width:25%;
+    }
+
+      .aboutDesc
+    {
+      position:absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      height: 90%;
+      width: 90%;
+      display: none;
+    }
+
+    .aboutDesc img
+    {
+      width:60%;
+      height: 60%;
+      margin-top: 10px;
+
+      /* float:left; */
+    }
+    .aboutDesc p
+    {
+      width:30%;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color:white;
+      text-align: center;
+      display:flex;
+      flex-direction: column;
+    }
+
+    
 }
 @media screen and (max-width: 992px) 
 {
   .gameWindow
   {
+    width:70%;
+  }
+
+  .answer
+  {
+    width: 100%;
+    font-size:13px;
+    height: 25%;
+    word-wrap:break-word;
+    padding-right: 10px;
+  }
+  .description
+  {
+    background-color: grey;
     width:80%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .description p
+  {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 20px;
   }
 
 }

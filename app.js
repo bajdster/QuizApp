@@ -11,7 +11,7 @@ function showQuestions()
 {
     console.log(questions);
 
-    document.querySelector('body').removeEventListener('click', showQuestions)
+    document.querySelector("li[name='test']").removeEventListener('click', showQuestions)
     if (round < questions.length)
     {
         gameWindow.innerHTML = `<h2 class ="questionContent">Pytanie ${questions[round].number}
@@ -30,8 +30,13 @@ function showQuestions()
         </div>
 
         <div class = "buttons">
-        <button class="prev"><img src="arrow.png"></button>
-        <button class = "next"><img src="arrow2.png"></button>
+        <button class="prev"><img src="arrow.png">
+        <span class ="tooltip">Previous Question</span>
+        </button>
+        
+        <button class = "next"><img src="arrow2.png">
+        <span class ="tooltip">Next Question</span>
+        </button>
         </div>
         `
     }
@@ -43,9 +48,18 @@ function showQuestions()
             </div>
                 <span class = "correct">Correct points: ${points}</span>
                 <span class = "incorrect">Incorrect points: ${round - points}</span>
-                <span></span>
+               <button class ="againButton">Try Again</button>
         </div>
         `
+
+        let againButton = document.querySelector('.againButton')
+        againButton.addEventListener('click', function()
+        {
+            round = 0;
+            points = 0;
+            isPrev = false;
+            showQuestions();
+        })
     }
 
     //back
@@ -65,6 +79,18 @@ function showQuestions()
     {
         prev.addEventListener('click', prevQuestion);
     }
+
+    function nextQuestion()
+        {
+                showQuestions();
+                isPrev = false;
+        }
+
+        
+        const next = document.querySelector(".next");
+        
+
+        next.addEventListener('click', nextQuestion);
     
 
     function checkAnswer()
@@ -95,19 +121,7 @@ function showQuestions()
             
         }
 
-        function nextQuestion()
-        {
-                showQuestions();
-                isPrev = false;
-        }
-
         
-        const next = document.querySelector(".next");
-        
-
-        next.addEventListener('click', nextQuestion);
-        
-
     }
 
     const allAnswers = document.querySelectorAll(".answer");
@@ -128,17 +142,23 @@ window.addEventListener('load', function()
     .then(jsondata => questions.push(...jsondata));
 })
 
-document.querySelector('body').addEventListener('click', showQuestions)
+
+document.querySelector("li[name='test']").addEventListener('click', showQuestions)
+
+//bład przy przycisku about gdy sie uruchomi test
+document.querySelector("li[name='about']").addEventListener('click', about)
+
+
+function about()
+{
+    let aboutDesc = document.querySelector(".aboutDesc");
+    aboutDesc.style.display = 'flex';
+    document.querySelector(".exit").onclick = function()
+    {
+        aboutDesc.style.display = "none";
+    }
+
+}
     
 //zagadka czemu dopiero po wywolaniu funkcji tablica zapełnia sie obiektami JSON a wczesniej jest całkowicie pusta
 //Czy trzeba bedzie zrobic przycisk "Rozpocznij quiz" aby sie pytania załadowały?
-
-
-// function prevQuestion()
-//         {
-//                 round= round-2;
-//                 showQuestions();
-//         }
-
-//     prev.addEventListener('click', prevQuestion);
-//     const prev = document.querySelector(".prev");

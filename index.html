@@ -6,13 +6,21 @@
   <title>Testing Quiz</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <container class = "container">
-  
+  <nav>
+    <ul class="menu">
+      <li name= "test"><span><ion-icon name="checkmark-outline"></ion-icon></span>
+      Start Test</li>
+      <li name = 'istqb'><span><ion-icon name="book-outline"></ion-icon></span><a href ="https://www.istqb.org/" target = "_blank">ISTQB</a></li>
+      <li name = "testing"><span><ion-icon name="search-circle-outline"></ion-icon></span>Testing</li>
+      <li name = "about"><span><ion-icon name="information-circle-outline"></ion-icon></span>About</li>
+    </ul>
+  </nav>
   <div class = "gameWindow">
     <h1>QUIZ APP</h1>
     <div class = "description">
@@ -20,10 +28,24 @@
       <p>We prepared for You a little competition</p>
       <p>You have got a chance to check how good You know a software testing</p>
       <p>You have to answer all of the questions to move forward</p>
-      <p>Of course you can go back to the previous question and change you answer if you think is wrong</p>
+      <p>Of course you can go back to the previous question and change you answer</p>
     </div>
-    <p>Click or tap to start</p>
+    <p>Click or tap on <ion-icon name="checkmark-outline"></ion-icon>Test</p>
+
+    
+
+    </div>
+    
+
   </div>
+  <div class="aboutDesc">
+    <p>My name is Michał and You are on my one of the projects site. 
+      <img src="astro.png">
+    </p>
+    
+    <p>Present one is focused on sharing testing knowledgle to people who think about making step forward in their tester's career</p>
+    <p><img src="rocket.png">App is delivered with using only HTML, CSS and Vanilla JavaScript (Okay, a little bit JSON too...)</p>
+    <div class = 'exit'><ion-icon name="close-circle-outline"></ion-icon></div>
 
 
 
@@ -32,6 +54,8 @@
 
 
 <script src = "app.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
