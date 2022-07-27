@@ -199,8 +199,8 @@ h1
 }
 .answer:hover
 {
-  background-color: lightblue;
-  color: white;
+  /* background-color: lightblue; */
+  /* color: white; */
   cursor: pointer;
   box-shadow: 2px 5px 5px grey;
 }
@@ -278,22 +278,22 @@ img
   display: block;
 }
 
-.correctAnswer
+.checkedAnswer
 {
-  background-color: greenyellow;
+  background-color: lightblue;
 }
-.correctAnswer:hover
+/* .checkedAnswer:hover
 {
-  background-color: greenyellow;
-}
-.wrongAnswer
+  background-color: lightblue;
+} */
+/* .wrongAnswer
 {
   background-color: rgb(147, 48, 48);
 }
 .wrongAnswer:hover
 {
   background-color: rgb(147, 48, 48);
-}
+} */
 
 .results
 {
