@@ -96,13 +96,10 @@ function showQuestions()
     function checkAnswer()
     {
         allAnswers.forEach(answer => answer.removeEventListener('click', checkAnswer))
-
+        this.classList.add("checkedAnswer");
         if(this.classList.contains(questions[round].correct))
         {
            console.log("correct");
-           this.classList.add("correctAnswer");
-           //popierdzielone jest cos z numerami rund
-           // problem z logika is guessed, nadal dodaje punkty kilka razy
            if(questions[round].isGuessed != true)
            {
             points++;
@@ -112,7 +109,7 @@ function showQuestions()
         }
         else
         {
-            this.classList.add("wrongAnswer");
+            // this.classList.add("wrongAnswer");
             round++;
             if(isPrev && points > 0)
             {
